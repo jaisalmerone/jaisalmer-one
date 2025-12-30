@@ -7,7 +7,7 @@ const SAFARIS = [
     details: "45 minutes • Sunset dunes • Experienced driver",
     price: 2000,
     offer: 599,
-    image: "/images/jeepsafari.jpg",
+    image: "/images/jeepsafari.jpg", // ✅ FIXED
   },
   {
     id: 2,
@@ -31,39 +31,32 @@ const SAFARIS = [
     details: "Private 4x4 • Premium desert experience",
     price: 4500,
     offer: 2000,
-    image: "/images/jeepsafari.jpg",
+    image: "/images/jeepsafari.jpg", // ✅ FIXED
   },
 ];
 
 export default function Safari() {
   const bookSafari = (item) => {
     const msg = encodeURIComponent(
-      `Hello, I want to book ${item.title} in Jaisalmer.\nOffer Price: ₹${item.offer}`
+      `Hello, I want to book ${item.title} in Jaisalmer. Offer price ₹${item.offer}`
     );
-    window.open(`https://wa.me/917827222253?text=${msg}`, "_blank");
+    window.open(`https://wa.me/917828722253?text=${msg}`, "_blank");
   };
 
   return (
-    <div className="container">
-      <h1 className="page-title">Desert Safari in Jaisalmer</h1>
+    <div className="page">
+      <h1>Desert Safari in Jaisalmer</h1>
 
-      <div className="grid">
+      <div className="card-grid">
         {SAFARIS.map((item) => (
-          <div key={item.id} className="card">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="card-image"
-            />
-
+          <div className="card" key={item.id}>
+            <img src={item.image} alt={item.title} />
             <h3>{item.title}</h3>
             <p>{item.details}</p>
-
-            <p className="price">
-              <span className="old">₹{item.price}</span>{" "}
-              <span className="new">₹{item.offer}</span>
+            <p>
+              <del>₹{item.price}</del>{" "}
+              <strong>₹{item.offer}</strong>
             </p>
-
             <button onClick={() => bookSafari(item)}>
               Book on WhatsApp
             </button>
