@@ -7,7 +7,7 @@ const SAFARIS = [
     details: "45 minutes • Sunset dunes • Experienced driver",
     price: 2000,
     offer: 599,
-    image: "/images/jeepsafari.jpg", // ✅ FIXED
+    image: "/images/jeepsafari.jpg",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const SAFARIS = [
     details: "Private 4x4 • Premium desert experience",
     price: 4500,
     offer: 2000,
-    image: "/images/jeepsafari.jpg", // ✅ FIXED
+    image: "/images/jeepsafari.jpg",
   },
 ];
 
@@ -44,20 +44,30 @@ export default function Safari() {
   };
 
   return (
-    <div className="page">
-      <h1>Desert Safari in Jaisalmer</h1>
+    <div className="container">
+      <h1 className="page-title">Desert Safari in Jaisalmer</h1>
 
       <div className="card-grid">
         {SAFARIS.map((item) => (
           <div className="card" key={item.id}>
-            <img src={item.image} alt={item.title} />
+            <img
+              src={item.image}
+              alt={item.title}
+              className="card-image"
+            />
+
             <h3>{item.title}</h3>
             <p>{item.details}</p>
+
             <p>
-              <del>₹{item.price}</del>{" "}
-              <strong>₹{item.offer}</strong>
+              <span className="old-price">₹{item.price}</span>{" "}
+              <span className="offer-price">₹{item.offer}</span>
             </p>
-            <button onClick={() => bookSafari(item)}>
+
+            <button
+              className="whatsapp-btn"
+              onClick={() => bookSafari(item)}
+            >
               Book on WhatsApp
             </button>
           </div>
