@@ -1,37 +1,25 @@
 import React from "react";
 
+import { images } from "../utils/images";
+
 const SAFARIS = [
   {
     id: 1,
     title: "Jeep Safari",
-    details: "45 minutes • Sunset dunes • Experienced driver",
-    price: 2000,
-    offer: 599,
-    image: "/images/jeepsafari.jpg"
+    image: images.jeepSafari,
+    price: 599
   },
   {
     id: 2,
     title: "Camel Safari",
-    details: "Traditional ride • Desert experience",
-    price: 800,
-    offer: 199,
-    image: "/images/camelsafari.jpg"
+    image: images.camelSafari,
+    price: 199
   },
   {
     id: 3,
     title: "ATV Ride",
-    details: "High-adrenaline ride • Safety gear included",
-    price: 2000,
-    offer: 999,
-    image: "/images/atv.jpg"
-  },
-  {
-    id: 4,
-    title: "Thar Safari",
-    details: "Private 4x4 • Premium desert experience",
-    price: 4500,
-    offer: 2000,
-    image: "/images/jeepsafari.jpg"
+    image: images.atv,
+    price: 999
   }
 ];
 

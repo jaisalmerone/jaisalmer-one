@@ -2,28 +2,30 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleMap from "../components/GoogleMap";
 
+import { images } from "../utils/images";
+
 const SECTIONS = [
   {
     title: "Hotels & Resorts",
     desc: "Luxury, budget & desert camps near Sam Sand Dunes",
     price: "Starting ₹2200 / night",
-    img: "/images/anayaresort.jpg",
+    img: images.anaya,
     whatsapp: "Hello, I want to book hotels in Jaisalmer",
     link: "/hotels"
   },
   {
-  title: "Desert Safari",
-  desc: "Jeep safari, camel safari & ATV rides",
-  price: "Starting ₹600",
-  img: "/images/jeepsafari.jpg",
-  whatsapp: "Hello, I want to book desert safari in Jaisalmer",
-  link: "/safari"
-},
+    title: "Desert Safari",
+    desc: "Jeep safari, camel safari & ATV rides",
+    price: "Starting ₹600",
+    img: images.jeepSafari,
+    whatsapp: "Hello, I want to book desert safari in Jaisalmer",
+    link: "/safari"
+  },
   {
     title: "Car Rentals",
     desc: "Sedan, SUV, tempo traveller with driver",
     price: "Starting ₹2500 / day",
-    img: "/images/swift.jpg",
+    img: images.swift,
     whatsapp: "Hello, I want to book car rental in Jaisalmer",
     link: "/car-rentals"
   },
@@ -31,11 +33,12 @@ const SECTIONS = [
     title: "Bike Rentals",
     desc: "Scooty & Royal Enfield bikes available",
     price: "Starting ₹600 / day",
-    img: "/images/scooty-poster.jpg",
+    img: images.scooty,
     whatsapp: "Hello, I want to book bike rental in Jaisalmer",
     link: "/bike-rentals"
   }
 ];
+
 
 export default function Home() {
   const navigate = useNavigate();
