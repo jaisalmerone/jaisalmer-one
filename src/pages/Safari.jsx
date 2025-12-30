@@ -40,74 +40,33 @@ export default function Safari() {
     const msg = encodeURIComponent(
       `Hello, I want to book ${item.title} in Jaisalmer.\nOffer Price: ₹${item.offer}`
     );
-    window.open(`https://wa.me/917828722253?text=${msg}`, "_blank");
+    window.open(`https://wa.me/917827222253?text=${msg}`, "_blank");
   };
 
   return (
-    <div style={{ padding: "40px", maxWidth: "1200px", margin: "0 auto" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
-        Desert Safari in Jaisalmer
-      </h1>
+    <div className="container">
+      <h1 className="page-title">Desert Safari in Jaisalmer</h1>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "25px",
-        }}
-      >
+      <div className="grid">
         {SAFARIS.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              borderRadius: "14px",
-              overflow: "hidden",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
-              background: "#fff",
-            }}
-          >
+          <div key={item.id} className="card">
             <img
               src={item.image}
               alt={item.title}
-              style={{
-                width: "100%",
-                height: "200px",
-                objectFit: "cover",
-              }}
+              className="card-image"
             />
 
-            <div style={{ padding: "18px" }}>
-              <h3>{item.title}</h3>
-              <p style={{ fontSize: "14px", color: "#555" }}>
-                {item.details}
-              </p>
+            <h3>{item.title}</h3>
+            <p>{item.details}</p>
 
-              <p>
-                <span style={{ textDecoration: "line-through", color: "#999" }}>
-                  ₹{item.price}
-                </span>{" "}
-                <strong style={{ color: "green", fontSize: "18px" }}>
-                  ₹{item.offer}
-                </strong>
-              </p>
+            <p className="price">
+              <span className="old">₹{item.price}</span>{" "}
+              <span className="new">₹{item.offer}</span>
+            </p>
 
-              <button
-                onClick={() => bookSafari(item)}
-                style={{
-                  marginTop: "10px",
-                  width: "100%",
-                  padding: "10px",
-                  background: "#25D366",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: "8px",
-                  cursor: "pointer",
-                  fontSize: "15px",
-                }}
-              >
-                Book on WhatsApp
-              </button>
-            </div>
+            <button onClick={() => bookSafari(item)}>
+              Book on WhatsApp
+            </button>
           </div>
         ))}
       </div>
