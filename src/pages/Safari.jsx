@@ -1,39 +1,33 @@
 import React from "react";
 
-import { images } from "../utils/images";
-
 const SAFARIS = [
   {
-    id: 1,
     title: "Jeep Safari",
-    image: images.jeepSafari,
-    price: 599
+    details: "45 minutes • Sunset dunes • Experienced driver",
+    price: 599,
+    oldPrice: 2000,
+    image: "/images/jeepsafari.jpg"
   },
   {
-    id: 2,
     title: "Camel Safari",
-    image: images.camelSafari,
-    price: 199
+    details: "Traditional ride • Desert experience",
+    price: 199,
+    oldPrice: 800,
+    image: "/images/camelsafari.jpg"
   },
   {
-    id: 3,
     title: "ATV Ride",
-    image: images.atv,
-    price: 999
+    details: "High-adrenaline ride • Safety gear included",
+    price: 999,
+    oldPrice: 2000,
+    image: "/images/atv.jpg"
   }
 ];
 
 export default function Safari() {
-  const bookSafari = (item) => {
-    const msg = encodeURIComponent(
-      `Hello, I want to book ${item.title} in Jaisalmer. Offer price ₹${item.offer}`
-    );
-    window.open(`https://wa.me/917828722253?text=${msg}`, "_blank");
-  };
-
   return (
-    <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "30px" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
+    <div style={{ padding: "100px 20px", maxWidth: "1200px", margin: "auto" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "40px" }}>
         Desert Safari in Jaisalmer
       </h1>
 
@@ -44,45 +38,38 @@ export default function Safari() {
           gap: "24px"
         }}
       >
-        {SAFARIS.map((item) => (
+        {SAFARIS.map((s, i) => (
           <div
-            key={item.id}
+            key={i}
             style={{
               background: "#fff",
               borderRadius: "18px",
-              boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
+              boxShadow: "0 12px 30px rgba(0,0,0,0.12)",
               overflow: "hidden"
             }}
           >
-            {/* IMAGE */}
-            <img
-              src={item.image}
-              alt={item.title}
-              style={{
-                width: "100%",
-                height: "220px",
-                objectFit: "cover"
-              }}
-            />
+            <div style={{ height: "220px", background: "#000" }}>
+              <img
+                src={s.image}
+                alt={s.title}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover"
+                }}
+              />
+            </div>
 
-            {/* CONTENT */}
             <div style={{ padding: "18px" }}>
-              <h3>{item.title}</h3>
-              <p style={{ color: "#555", fontSize: "14px" }}>
-                {item.details}
-              </p>
+              <h3>{s.title}</h3>
+              <p style={{ fontSize: "14px", color: "#666" }}>{s.details}</p>
 
-              <p style={{ marginTop: "6px" }}>
-                <span style={{ textDecoration: "line-through", color: "#888" }}>
-                  ₹{item.price}
-                </span>{" "}
-                <b style={{ color: "#2e7d32", fontSize: "18px" }}>
-                  ₹{item.offer}
-                </b>
+              <p>
+                <del>₹{s.oldPrice}</del>{" "}
+                <b style={{ color: "#2e7d32" }}>₹{s.price}</b>
               </p>
 
               <button
-                onClick={() => bookSafari(item)}
                 style={{
                   marginTop: "12px",
                   width: "100%",
@@ -94,6 +81,12 @@ export default function Safari() {
                   fontWeight: "bold",
                   cursor: "pointer"
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/917828722253?text=I want to book desert safari",
+                    "_blank"
+                  )
+                }
               >
                 Book on WhatsApp
               </button>
