@@ -35,6 +35,7 @@ const SAFARIS = [
   }
 ];
 
+
 export default function Safari() {
   const bookSafari = (item) => {
     const msg = encodeURIComponent(
