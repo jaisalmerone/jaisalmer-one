@@ -7,7 +7,7 @@ const SAFARIS = [
     details: "45 minutes • Sunset dunes • Experienced driver",
     oldPrice: 2000,
     offer: 599,
-    image: "/images/jeepsafari.jpg"
+    image:  "/images/atv.jpg"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const SAFARIS = [
     details: "Traditional ride • Desert experience",
     oldPrice: 800,
     offer: 199,
-    image: "/images/camelsafari.jpg"
+    image:  "/images/atv.jpg"
   },
   {
     id: 3,
