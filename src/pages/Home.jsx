@@ -2,19 +2,12 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleMap from "../components/GoogleMap";
 
-// ✅ IMPORT IMAGES (IMPORTANT FIX)
-import heroImg from "../../public/images/hero.jpg";
-import hotelImg from "../../public/images/anayaresort.jpg";
-import safariImg from "../../public/images/jeepsafari.jpg";
-import carImg from "../../public/images/swift.jpg";
-import bikeImg from "../../public/images/scooty-poster.jpg";
-
 const SECTIONS = [
   {
     title: "Hotels & Resorts",
     desc: "Luxury, budget & desert camps near Sam Sand Dunes",
     price: "Starting ₹2200 / night",
-    img: hotelImg,
+    img: "/images/anayaresort.jpg",
     whatsapp: "Hello, I want to book hotels in Jaisalmer",
     link: "/hotels"
   },
@@ -22,7 +15,7 @@ const SECTIONS = [
     title: "Desert Safari",
     desc: "Jeep safari, camel safari & ATV rides",
     price: "Starting ₹600",
-    img: safariImg,
+    img: "/images/jeepsafari.jpg",
     whatsapp: "Hello, I want to book desert safari in Jaisalmer",
     link: "/safari"
   },
@@ -30,7 +23,7 @@ const SECTIONS = [
     title: "Car Rentals",
     desc: "Sedan, SUV, tempo traveller with driver",
     price: "Starting ₹2500 / day",
-    img: carImg,
+    img: "/images/swift.jpg",
     whatsapp: "Hello, I want to book car rental in Jaisalmer",
     link: "/car-rentals"
   },
@@ -38,7 +31,7 @@ const SECTIONS = [
     title: "Bike Rentals",
     desc: "Scooty & Royal Enfield bikes available",
     price: "Starting ₹600 / day",
-    img: bikeImg,
+    img: "/images/scooty-poster.jpg",
     whatsapp: "Hello, I want to book bike rental in Jaisalmer",
     link: "/bike-rentals"
   }
@@ -63,7 +56,7 @@ export default function Home() {
         style={{ cursor: "pointer" }}
       >
         <img
-          src={heroImg}
+          src="/images/hero.jpg"
           alt="Jaisalmer New Year Banner"
           className="hero-image"
         />
@@ -81,7 +74,6 @@ export default function Home() {
         </p>
       </section>
 
-      {/* SERVICES */}
       <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
         Jaisalmer ONE – Book Everything in One Place
       </h1>
@@ -107,23 +99,10 @@ export default function Home() {
                 background: "#fff",
                 borderRadius: "18px",
                 boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
-                overflow: "hidden",
-                display: "flex",
-                flexDirection: "column",
-                cursor: "pointer",
-                transition: "transform 0.25s ease"
+                overflow: "hidden"
               }}
             >
-              {/* IMAGE */}
-              <div
-                style={{
-                  background: "#000",
-                  height: "260px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center"
-                }}
-              >
+              <div style={{ height: "260px", background: "#000" }}>
                 <img
                   src={item.img}
                   alt={item.title}
@@ -135,20 +114,10 @@ export default function Home() {
                 />
               </div>
 
-              {/* CONTENT */}
               <div style={{ padding: "18px" }}>
                 <h3>{item.title}</h3>
-                <p style={{ color: "#555", fontSize: "14px" }}>
-                  {item.desc}
-                </p>
-
-                <p
-                  style={{
-                    marginTop: "6px",
-                    color: "#2e7d32",
-                    fontWeight: "bold"
-                  }}
-                >
+                <p style={{ fontSize: "14px", color: "#555" }}>{item.desc}</p>
+                <p style={{ color: "#2e7d32", fontWeight: "bold" }}>
                   {item.price}
                 </p>
 
