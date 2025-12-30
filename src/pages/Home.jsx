@@ -2,14 +2,12 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleMap from "../components/GoogleMap";
 
-import { images } from "../utils/images";
-
 const SECTIONS = [
   {
     title: "Hotels & Resorts",
     desc: "Luxury, budget & desert camps near Sam Sand Dunes",
     price: "Starting ₹2200 / night",
-    img: images.anaya,
+    img: "/images/anayaresort.jpg",
     whatsapp: "Hello, I want to book hotels in Jaisalmer",
     link: "/hotels"
   },
@@ -17,7 +15,7 @@ const SECTIONS = [
     title: "Desert Safari",
     desc: "Jeep safari, camel safari & ATV rides",
     price: "Starting ₹600",
-    img: images.jeepSafari,
+    img: "/images/camelsafari.jpg",
     whatsapp: "Hello, I want to book desert safari in Jaisalmer",
     link: "/safari"
   },
@@ -25,7 +23,7 @@ const SECTIONS = [
     title: "Car Rentals",
     desc: "Sedan, SUV, tempo traveller with driver",
     price: "Starting ₹2500 / day",
-    img: images.swift,
+    img: "/images/swift.jpg",
     whatsapp: "Hello, I want to book car rental in Jaisalmer",
     link: "/car-rentals"
   },
@@ -33,12 +31,11 @@ const SECTIONS = [
     title: "Bike Rentals",
     desc: "Scooty & Royal Enfield bikes available",
     price: "Starting ₹600 / day",
-    img: images.scooty,
+    img: "/images/scooty-poster.jpg",
     whatsapp: "Hello, I want to book bike rental in Jaisalmer",
     link: "/bike-rentals"
   }
 ];
-
 
 export default function Home() {
   const navigate = useNavigate();
@@ -60,7 +57,7 @@ export default function Home() {
       >
         <img
           src="/images/hero.jpg"
-          alt="Jaisalmer New Year Banner"
+          alt="Jaisalmer Banner"
           className="hero-image"
         />
       </div>
@@ -68,8 +65,8 @@ export default function Home() {
       {/* INTRO */}
       <section style={{ textAlign: "center", padding: "30px 20px" }}>
         <p style={{ fontSize: "18px", maxWidth: "800px", margin: "0 auto" }}>
-          Book Hotels, Desert Safari, Car & Bike Rentals in Jaisalmer —
-          trusted local service with best prices and instant WhatsApp support.
+          Book Hotels, Desert Safari, Car & Bike Rentals in Jaisalmer — trusted
+          local service with best prices and instant WhatsApp support.
         </p>
 
         <p style={{ marginTop: "10px", fontWeight: "bold" }}>
@@ -77,6 +74,7 @@ export default function Home() {
         </p>
       </section>
 
+      {/* SERVICES */}
       <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
         Jaisalmer ONE – Book Everything in One Place
       </h1>
@@ -105,21 +103,30 @@ export default function Home() {
                 overflow: "hidden"
               }}
             >
-              <div style={{ height: "260px", background: "#000" }}>
+              <div
+                style={{
+                  background: "#000",
+                  height: "260px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
                 <img
                   src={item.img}
                   alt={item.title}
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover"
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    objectFit: "contain"
                   }}
                 />
               </div>
 
               <div style={{ padding: "18px" }}>
                 <h3>{item.title}</h3>
-                <p style={{ fontSize: "14px", color: "#555" }}>{item.desc}</p>
+                <p style={{ color: "#555", fontSize: "14px" }}>{item.desc}</p>
+
                 <p style={{ color: "#2e7d32", fontWeight: "bold" }}>
                   {item.price}
                 </p>
@@ -127,7 +134,6 @@ export default function Home() {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    e.stopPropagation();
                     bookWhatsApp(item.whatsapp);
                   }}
                   style={{
