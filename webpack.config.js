@@ -4,15 +4,17 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "production",
   entry: "./src/index.jsx",
+
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/",   // 🔥 REQUIRED for Vercel
-    clean: true
+    publicPath: "/"
   },
+
   resolve: {
     extensions: [".js", ".jsx"]
   },
+
   module: {
     rules: [
       {
@@ -26,9 +28,10 @@ module.exports = {
       }
     ]
   },
+
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html" // 🔥 THIS CREATES dist/index.html
+      template: "./public/index.html"
     })
   ]
 };
