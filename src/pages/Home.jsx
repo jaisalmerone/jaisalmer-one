@@ -1,14 +1,20 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleMap from "../components/GoogleMap";
-import { images } from "../utils/images";
+
+// ✅ IMPORT IMAGES (IMPORTANT FIX)
+import heroImg from "../../public/images/hero.jpg";
+import hotelImg from "../../public/images/anayaresort.jpg";
+import safariImg from "../../public/images/jeepsafari.jpg";
+import carImg from "../../public/images/swift.jpg";
+import bikeImg from "../../public/images/scooty-poster.jpg";
 
 const SECTIONS = [
   {
     title: "Hotels & Resorts",
     desc: "Luxury, budget & desert camps near Sam Sand Dunes",
     price: "Starting ₹2200 / night",
-    img: images.hotel,
+    img: hotelImg,
     whatsapp: "Hello, I want to book hotels in Jaisalmer",
     link: "/hotels"
   },
@@ -16,7 +22,7 @@ const SECTIONS = [
     title: "Desert Safari",
     desc: "Jeep safari, camel safari & ATV rides",
     price: "Starting ₹600",
-    img: images.safari, // ✅ FIXED
+    img: safariImg,
     whatsapp: "Hello, I want to book desert safari in Jaisalmer",
     link: "/safari"
   },
@@ -24,7 +30,7 @@ const SECTIONS = [
     title: "Car Rentals",
     desc: "Sedan, SUV, tempo traveller with driver",
     price: "Starting ₹2500 / day",
-    img: images.car,
+    img: carImg,
     whatsapp: "Hello, I want to book car rental in Jaisalmer",
     link: "/car-rentals"
   },
@@ -32,7 +38,7 @@ const SECTIONS = [
     title: "Bike Rentals",
     desc: "Scooty & Royal Enfield bikes available",
     price: "Starting ₹600 / day",
-    img: images.bike,
+    img: bikeImg,
     whatsapp: "Hello, I want to book bike rental in Jaisalmer",
     link: "/bike-rentals"
   }
@@ -50,20 +56,20 @@ export default function Home() {
 
   return (
     <div style={{ paddingTop: "90px" }}>
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <div
         className="hero-wrapper"
         onClick={() => navigate("/hotels")}
         style={{ cursor: "pointer" }}
       >
         <img
-          src={images.hero}
+          src={heroImg}
           alt="Jaisalmer New Year Banner"
           className="hero-image"
         />
       </div>
 
-      {/* ================= INTRO ================= */}
+      {/* INTRO */}
       <section style={{ textAlign: "center", padding: "30px 20px" }}>
         <p style={{ fontSize: "18px", maxWidth: "800px", margin: "0 auto" }}>
           Book Hotels, Desert Safari, Car & Bike Rentals in Jaisalmer —
@@ -75,7 +81,7 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ================= SERVICES ================= */}
+      {/* SERVICES */}
       <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
         Jaisalmer ONE – Book Everything in One Place
       </h1>
@@ -107,12 +113,6 @@ export default function Home() {
                 cursor: "pointer",
                 transition: "transform 0.25s ease"
               }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "translateY(-6px)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "translateY(0)")
-              }
             >
               {/* IMAGE */}
               <div
@@ -128,9 +128,9 @@ export default function Home() {
                   src={item.img}
                   alt={item.title}
                   style={{
-                    maxWidth: "100%",
-                    maxHeight: "100%",
-                    objectFit: "contain"
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
                   }}
                 />
               </div>
