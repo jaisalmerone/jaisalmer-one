@@ -7,7 +7,7 @@ const SAFARIS = [
     details: "45 minutes • Sunset dunes • Experienced driver",
     oldPrice: 2000,
     offer: 599,
-    image:  "/images/atv.jpg"
+    image:  "/images/jeepsafari.jpg"
   },
   {
     id: 2,
