@@ -1,3 +1,4 @@
+import { images } from "../utils/images";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleMap from "../components/GoogleMap";
