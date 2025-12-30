@@ -12,13 +12,13 @@ const SECTIONS = [
     link: "/hotels"
   },
   {
-    title: "Desert Safari",
-    desc: "Jeep safari, camel safari & ATV rides",
-    price: "Starting ₹600",
-    img: "/images/jeepsafari.jpg",
-    whatsapp: "Hello, I want to book desert safari in Jaisalmer",
-    link: "/safari"
-  },
+  title: "Desert Safari",
+  desc: "Jeep safari, camel safari & ATV rides",
+  price: "Starting ₹600",
+  img: "/images/jeepsafari.jpg",
+  whatsapp: "Hello, I want to book desert safari in Jaisalmer",
+  link: "/safari"
+},
   {
     title: "Car Rentals",
     desc: "Sedan, SUV, tempo traveller with driver",

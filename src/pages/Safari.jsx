@@ -5,23 +5,23 @@ const SAFARIS = [
     id: 1,
     title: "Jeep Safari",
     details: "45 minutes • Sunset dunes • Experienced driver",
-    oldPrice: 2000,
+    price: 2000,
     offer: 599,
-    image:  "/images/jeepsafari.jpg"
+    image: "/images/jeepsafari.jpg"
   },
   {
     id: 2,
     title: "Camel Safari",
     details: "Traditional ride • Desert experience",
-    oldPrice: 800,
+    price: 800,
     offer: 199,
-    image:  "/images/atv.jpg"
+    image: "/images/camelsafari.jpg"
   },
   {
     id: 3,
     title: "ATV Ride",
     details: "High-adrenaline ride • Safety gear included",
-    oldPrice: 2000,
+    price: 2000,
     offer: 999,
     image: "/images/atv.jpg"
   },
@@ -29,12 +29,11 @@ const SAFARIS = [
     id: 4,
     title: "Thar Safari",
     details: "Private 4x4 • Premium desert experience",
-    oldPrice: 4500,
+    price: 4500,
     offer: 2000,
     image: "/images/jeepsafari.jpg"
   }
 ];
-
 
 export default function Safari() {
   const bookSafari = (item) => {
@@ -53,7 +52,7 @@ export default function Safari() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
           gap: "24px"
         }}
       >
@@ -62,31 +61,32 @@ export default function Safari() {
             key={item.id}
             style={{
               background: "#fff",
-              borderRadius: "16px",
-              boxShadow: "0 10px 28px rgba(0,0,0,0.12)",
+              borderRadius: "18px",
+              boxShadow: "0 12px 32px rgba(0,0,0,0.15)",
               overflow: "hidden"
             }}
           >
+            {/* IMAGE */}
             <img
               src={item.image}
               alt={item.title}
               style={{
                 width: "100%",
-                height: "200px",
+                height: "220px",
                 objectFit: "cover"
-              }}
-              onError={(e) => {
-                e.target.src = "/images/hero.jpg";
               }}
             />
 
-            <div style={{ padding: "16px" }}>
+            {/* CONTENT */}
+            <div style={{ padding: "18px" }}>
               <h3>{item.title}</h3>
-              <p style={{ color: "#666", fontSize: "14px" }}>{item.details}</p>
+              <p style={{ color: "#555", fontSize: "14px" }}>
+                {item.details}
+              </p>
 
-              <p style={{ marginTop: "8px" }}>
-                <span style={{ textDecoration: "line-through", color: "#999" }}>
-                  ₹{item.oldPrice}
+              <p style={{ marginTop: "6px" }}>
+                <span style={{ textDecoration: "line-through", color: "#888" }}>
+                  ₹{item.price}
                 </span>{" "}
                 <b style={{ color: "#2e7d32", fontSize: "18px" }}>
                   ₹{item.offer}
@@ -98,13 +98,13 @@ export default function Safari() {
                 style={{
                   marginTop: "12px",
                   width: "100%",
-                  padding: "10px",
+                  padding: "12px",
                   background: "#25D366",
-                  color: "#fff",
                   border: "none",
                   borderRadius: "8px",
-                  cursor: "pointer",
-                  fontSize: "15px"
+                  color: "#fff",
+                  fontWeight: "bold",
+                  cursor: "pointer"
                 }}
               >
                 Book on WhatsApp
