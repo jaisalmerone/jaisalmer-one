@@ -1,14 +1,14 @@
-import { images } from "../utils/images";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleMap from "../components/GoogleMap";
+import { images } from "../utils/images";
 
 const SECTIONS = [
   {
     title: "Hotels & Resorts",
     desc: "Luxury, budget & desert camps near Sam Sand Dunes",
     price: "Starting ₹2200 / night",
-    img: "/images/anayaresort.jpg",
+    img: images.hotel,
     whatsapp: "Hello, I want to book hotels in Jaisalmer",
     link: "/hotels"
   },
@@ -16,7 +16,7 @@ const SECTIONS = [
     title: "Desert Safari",
     desc: "Jeep safari, camel safari & ATV rides",
     price: "Starting ₹600",
-    img: "/images/jeepsafari.jpg",
+    img: images.safari, // ✅ FIXED
     whatsapp: "Hello, I want to book desert safari in Jaisalmer",
     link: "/safari"
   },
@@ -24,7 +24,7 @@ const SECTIONS = [
     title: "Car Rentals",
     desc: "Sedan, SUV, tempo traveller with driver",
     price: "Starting ₹2500 / day",
-    img: "/images/swift.jpg",
+    img: images.car,
     whatsapp: "Hello, I want to book car rental in Jaisalmer",
     link: "/car-rentals"
   },
@@ -32,7 +32,7 @@ const SECTIONS = [
     title: "Bike Rentals",
     desc: "Scooty & Royal Enfield bikes available",
     price: "Starting ₹600 / day",
-    img: "/images/scooty-poster.jpg",
+    img: images.bike,
     whatsapp: "Hello, I want to book bike rental in Jaisalmer",
     link: "/bike-rentals"
   }
@@ -50,14 +50,14 @@ export default function Home() {
 
   return (
     <div style={{ paddingTop: "90px" }}>
-      {/* ================= HERO (FIXED) ================= */}
+      {/* ================= HERO ================= */}
       <div
         className="hero-wrapper"
         onClick={() => navigate("/hotels")}
         style={{ cursor: "pointer" }}
       >
         <img
-          src="/images/hero.jpg"
+          src={images.hero}
           alt="Jaisalmer New Year Banner"
           className="hero-image"
         />
@@ -114,7 +114,7 @@ export default function Home() {
                 (e.currentTarget.style.transform = "translateY(0)")
               }
             >
-              {/* IMAGE – FULL VIEW (NO CROP) */}
+              {/* IMAGE */}
               <div
                 style={{
                   background: "#000",
@@ -152,7 +152,6 @@ export default function Home() {
                   {item.price}
                 </p>
 
-                {/* WHATSAPP BUTTON */}
                 <button
                   onClick={(e) => {
                     e.preventDefault();
