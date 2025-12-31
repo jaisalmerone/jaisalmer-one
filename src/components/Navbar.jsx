@@ -18,7 +18,9 @@ export default function Navbar() {
       <div className="nav-container">
         {/* Logo */}
         <div className="logo">
-          <img src="/images/logo.png" alt="Jaisalmer ONE" />
+          <Link to="/">
+            <img src="/images/logo.png" alt="Jaisalmer ONE" />
+          </Link>
         </div>
 
         {/* Menu */}
@@ -26,6 +28,12 @@ export default function Navbar() {
           <Link to="/">Home</Link>
           <Link to="/hotels">Hotels</Link>
           <Link to="/safari">Safari</Link>
+
+          {/* ⭐ NEW GOLDEN SAFARI LINK */}
+          <Link to="/golden-safari" className="golden-link">
+            Golden Safari
+          </Link>
+
           <Link to="/car-rentals">Car Rentals</Link>
           <Link to="/bike-rentals">Bike Rentals</Link>
           <Link to="/contact">Contact</Link>

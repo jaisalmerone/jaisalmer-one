@@ -55,3 +55,7 @@
 .menu a:hover::after {
   width: 100%;
 }
+.golden-link {
+  color: #d4af37 !important;
+  font-weight: 700;
+}
