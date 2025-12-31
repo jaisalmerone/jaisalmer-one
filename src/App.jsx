@@ -1,5 +1,5 @@
 import GoldenSafari from "./pages/GoldenSafari";
-<Route path="/golden-safari" element={<GoldenSafari />} />
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -20,6 +20,7 @@ export default function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/golden-safari" element={<GoldenSafari />} />
         <Route path="/" element={<Home />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/safari" element={<Safari />} />
